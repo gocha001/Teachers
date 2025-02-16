@@ -29,16 +29,6 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// Логінізація користувача
-// export const loginUser = async (email, password) => {
-//   const userCredential = await signInWithEmailAndPassword(
-//     auth,
-//     email,
-//     password
-//   );
-//   return userCredential.user;
-// };
-
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async ({ email, password }, { rejectWithValue }) => {
@@ -59,11 +49,6 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-// Вихід з акаунту
-// export const logoutUser = async () => {
-//   await signOut(auth);
-// };
-
 export const logoutUser = createAsyncThunk(
   "auth/logoutUser",
   async (_, { rejectWithValue }) => {
@@ -75,18 +60,6 @@ export const logoutUser = createAsyncThunk(
   }
 );
 
-// Отримання поточного користувача
 export const getCurrentUser = (callback) => {
   return onAuthStateChanged(auth, callback);
 };
-
-// export const getCurrentUser = createAsyncThunk(
-//   "auth/getCurrentUser",
-//   async ({ callback }, { rejectWithValue }) => {
-//     try {
-//       return onAuthStateChanged(auth, callback);
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// )

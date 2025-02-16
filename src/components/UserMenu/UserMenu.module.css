@@ -1,0 +1,19 @@
+.userMenu {
+  width: 495px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #121417;
+}
+
+.active {
+  color: blue;
+}

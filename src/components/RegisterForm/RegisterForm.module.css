@@ -1,0 +1,76 @@
+.registerTitleCont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 438px;
+  height: 134px;
+  margin-top: 64px;
+}
+
+.registerTitle {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+.registerText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  color: rgba(18, 20, 23, 0.8);
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.registerInputs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 18px;
+  width: 438px;
+}
+
+.registerInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 18px;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 12px;
+  width: 438px;
+  height: 54px;
+  padding-left: 18px;
+}
+
+.passwordBtn {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  border: none;
+  background: none;
+}
+
+.registerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  width: 438px;
+  height: 60px;
+  background: #f4c550;
+  margin-bottom: 64px;
+}
+
+.error {
+  color: red;
+}

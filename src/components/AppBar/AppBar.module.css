@@ -1,0 +1,12 @@
+.appBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 28px;
+  width: 1184px;
+  height: 48px;
+  margin-top: 20px;
+  margin-left: 128px;
+  margin-right: 128px;
+}

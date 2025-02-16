@@ -1,0 +1,137 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  width: 1312px;
+  height: 670px;
+  margin-left: 64px;
+  margin-top: 20px;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 1312px;
+  height: 530px;
+}
+
+.homeContent {
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+  height: 530px;
+  padding-top: 98px;
+  padding-left: 64px;
+  border-radius: 30px;
+  background: #f8f8f8;
+}
+
+.homeTitle {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.16667;
+  letter-spacing: -0.02em;
+  color: #121417;
+  width: 548px;
+  margin-bottom: 32px;
+}
+
+.span {
+  font-style: italic;
+  font-weight: 400;
+  border-radius: 8px;
+  width: 195px;
+  height: 40px;
+  background: #fbe9ba;
+}
+
+.homeText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  letter-spacing: -0.02em;
+  color: #121417;
+  width: 471px;
+  margin-bottom: 64px;
+}
+
+.homeLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 12px;
+  width: 267px;
+  height: 60px;
+  background: #f4c550;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55556;
+  color: #121417;
+}
+
+.homeImg {
+  width: 568px;
+  height: 530px;
+  border-radius: 30px;
+}
+
+.homeFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1312px;
+  height: 116px;
+  border: 1.5px dashed #f4c550;
+  border-radius: 30px;
+}
+
+.footerCont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 100px;
+  width: 1067px;
+  height: 36px;
+}
+
+.footerItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 16px;
+  height: 36px;
+}
+
+.footerTitle {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.14286;
+  letter-spacing: -0.02em;
+  color: #121417;
+  white-space: nowrap;
+}
+
+.footerText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: rgba(18, 20, 23, 0.7);
+}
+
+.first {
+  width: 217px;
+}
+
+.second {
+  width: 232px;
+}
+
+.last {
+  width: 159px;
+}

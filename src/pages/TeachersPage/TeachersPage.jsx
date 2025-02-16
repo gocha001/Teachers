@@ -1,8 +1,12 @@
-
+import TeachersList from "../../components/TeachersList/TeachersList"
+import css from './TeachersPage.module.css' 
 
 const TeachersPage = () => {
   return (
-    <div>TeachersPage</div>
+    <div className={css.teachersCont}>
+      
+      <TeachersList />
+    </div>
   )
 }
 

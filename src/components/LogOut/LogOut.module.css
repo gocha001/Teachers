@@ -1,0 +1,31 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  height: 28px;
+  border: none;
+  background: none;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  transform: rotate(180deg);
+  position: relative;
+  right: -5px;
+  color: brown;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #121417;
+  white-space: nowrap;
+}
