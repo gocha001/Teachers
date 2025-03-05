@@ -72,6 +72,10 @@
   color: #121417;
 }
 
+.homeLink:hover {
+  background: #ffdc86;
+}
+
 .homeImg {
   width: 568px;
   height: 530px;

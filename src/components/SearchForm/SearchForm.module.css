@@ -1,0 +1,115 @@
+.error {
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchSelects {
+  width: 583px;
+  height: 74px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.searchSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  height: 74px;
+}
+
+.searchLabel {
+  font-weight: 500;
+font-size: 14px;
+line-height: 1.28571;
+color: #8a8a89;
+}
+
+.select {
+background: #fff;
+font-weight: 500;
+font-size: 18px;
+line-height: 1.11111;
+}
+
+.language {
+  width: 198px;
+}
+
+.level {
+  width: 221px
+}
+
+.price {
+  width: 124px;
+}
+
+.selectBox {
+  appearance: none;
+  border: none;
+  border-radius: 14px;
+  padding-left: 14px;
+  padding-right: 40px;
+  height: 48px;
+  background: #f3f3f3; /* Змінений фон */
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #121417;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  text-overflow: ellipsis;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="%23121417"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+.selectBox option {
+  color: #8a8a89;
+}
+
+.selectBox option:checked {
+  color: #121417;
+}
+
+.selectBox:focus {
+  outline: none; /*Прибирає синю рамку фокусу */
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="%23121417"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E'); /* Повторно задаємо іконку */
+}
+
+.btnSelect {
+  display: flex;
+align-items: center;
+justify-content: center;
+width: 267px;
+height: 60px;
+background:  #f4c550;
+border-radius: 12px;
+font-weight: 700;
+font-size: 18px;
+line-height: 1.55556;
+color: #121417;
+border: none;
+}
+
+.btnSelect:hover {
+  background: #ffdc86
+}

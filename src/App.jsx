@@ -1,11 +1,12 @@
-import { AuthProvider } from './context/AuthProvider';
-import './App.css'
+import { AuthProvider } from "./context/AuthProvider";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Lauout from "./components/Lauout.jsx";
+import Layout from "./components/Layout.jsx";
 import Loader from "./components/Loader/Loader";
 import { lazy, Suspense } from "react";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-// import RestrictedRoute from './components/RestrictedRoute.jsx';
+import ScrollUp from "./components/ScrollUp/ScrollUp.jsx";
+import { useState } from "react";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const TeachersPage = lazy(() =>
@@ -19,12 +20,20 @@ const NotFoundPage = lazy(() =>
 );
 
 function App() {
+  const [scr, setScr] = useState(0);
 
+  window.onscroll = () => {
+    if (window.scrollY > 400) {
+      setScr(1);
+    } else {
+      setScr(0);
+    }
+  };
   return (
     <Suspense fallback={<Loader />}>
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<Lauout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="teachers" element={<TeachersPage />} />
             <Route
@@ -37,7 +46,9 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AuthProvider>
-    </Suspense>);
+      {!!scr && <ScrollUp />}
+    </Suspense>
+  );
 }
 
-export default App
+export default App;
