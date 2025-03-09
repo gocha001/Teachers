@@ -1,7 +1,7 @@
 import defaultImg from "/notFound.png";
-import css from "./NotFound.module.css";
+import css from "./NotFoundPage.module.css";
 
-const NotFound = () => {
+const NotFoundPage = () => {
   return (
     <div className={css.notFound}>
       <img src={defaultImg} />
@@ -9,4 +9,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;
