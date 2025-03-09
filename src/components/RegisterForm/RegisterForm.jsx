@@ -25,7 +25,7 @@ const RegisterForm = ({ onClose }) => {
   const error = useSelector(selectError);
 
   const onSubmit = async (data) => {
-    const resultAction = await dispatch(registerUser(data));
+    const resultAction = dispatch(registerUser(data));
 
     if (registerUser.fulfilled.match(resultAction)) {
       onClose();

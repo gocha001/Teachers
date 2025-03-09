@@ -4,9 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../redux/user/selectors";
 import {
   addFavorite,
-  removeFavorite,
-} from "../../redux/favorites/favoritesSlice";
+  deleteFavorite,
+} from "../../redux/favorites/favoritesOperations";
 import { selectTeachersFavorites } from "../../redux/favorites/selectors";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Modal from "../Modal/Modal";
+import BookTrialLesson from "../BookTrialLesson/BookTrialLesson";
 
 const TeacherCard = ({ teacher }) => {
   const dispatch = useDispatch();
@@ -14,13 +18,22 @@ const TeacherCard = ({ teacher }) => {
   const favorites = useSelector(selectTeachersFavorites);
   const [more, setMore] = useState(false);
   const love = favorites.some((fav) => fav.id === teacher.id);
+  const [isOpenTrial, setIsOpenTrial] = useState(false);
 
   const handleLove = () => {
-    if (!user) return;
+    if (!user) {
+      toast.info("Please log in or sign up to continue", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+      return;
+    }
+    const teacherWithUid = { ...teacher, uid: user.uid };
+
     if (!love) {
-      dispatch(addFavorite(teacher));
+      dispatch(addFavorite(teacherWithUid));
     } else {
-      dispatch(removeFavorite(teacher.id));
+      dispatch(deleteFavorite(teacher.id));
     }
   };
 
@@ -29,7 +42,10 @@ const TeacherCard = ({ teacher }) => {
   };
 
   const handleTrial = () => {
-    console.log();
+    setIsOpenTrial(true);
+  };
+  const closeModalTrial = () => {
+    setIsOpenTrial(false);
   };
 
   return (
@@ -46,8 +62,8 @@ const TeacherCard = ({ teacher }) => {
             <div className={css.cardHeader}>
               <div className={css.cardNameCont}>
                 <h4 className={css.cardNameTitle}>Languages</h4>
-                <h2 className={css.className}>
-                  {teacher.name} {teacher.surname} {teacher.id}
+                <h2 className={css.cardName}>
+                  {teacher.name} {teacher.surname}
                 </h2>
               </div>
               <div className={css.cardItemsLove}>
@@ -187,6 +203,11 @@ const TeacherCard = ({ teacher }) => {
           <button type="button" onClick={handleTrial} className={css.btnTrial}>
             Book trial lesson
           </button>
+        )}
+        {isOpenTrial && (
+          <Modal onClose={closeModalTrial} isOpen={isOpenTrial}>
+            <BookTrialLesson onClose={closeModalTrial} teacher={teacher} />
+          </Modal>
         )}
       </div>
     </div>

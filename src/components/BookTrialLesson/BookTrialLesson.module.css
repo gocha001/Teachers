@@ -1,0 +1,194 @@
+.bookTrialLesson {
+  border-radius: 30px;
+  width: 599px;
+  height: 730px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 64px;
+}
+
+.bookTrialLessonTitleCont {
+  width: 472px;
+  height: 134px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bookTrialLessonTitle {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+.bookTrialLessonText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  color: rgba(18, 20, 23, 0.8);
+}
+
+.bookTrialLessonTeacher {
+  width: 472px;
+  height: 44px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.bookTrialLessonAvatar {
+  border-radius: 100px;
+  width: 44px;
+  height: 44px;
+}
+
+.bookTrialLessonTeacherText {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  height: 44px;
+}
+
+.bookTrialLessonTeacherSubText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #8a8a89;
+}
+
+.bookTrialLessonTeacherName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+}
+
+.bookTrialLessonFormTitle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #121417;
+  width: 472px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.bookTrialLessonFieldset {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  width: 197px;
+  height: 180px;
+  border: none;
+  white-space: nowrap;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.bookTrialLessonLabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 197px;
+  height: 24px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f4c550;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: #f4c550;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reason {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  text-align: center;
+  color: #121417;
+}
+
+.for {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  width: 472px;
+  /* height: 198px; */
+}
+
+.forInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 18px;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 12px;
+  padding-left: 18px;
+  width: 472px;
+  height: 44px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  color: #121417;
+}
+
+.bookTrialLessonBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+  border-radius: 12px;
+  padding: 16px 215px;
+  width: 472px;
+  height: 60px;
+  background: #f4c550;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55556;
+  color: #121417;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}

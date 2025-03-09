@@ -36,12 +36,12 @@ const AuthNav = () => {
         Registration
       </button>
       {isOpenLog && (
-        <Modal onClose={closeModalLog}>
+        <Modal onClose={closeModalLog} isOpen={isOpenLog}>
           <LoginForm onClose={closeModalLog} />
         </Modal>
       )}
       {isOpenReg && (
-        <Modal onClose={closeModalReg}>
+        <Modal onClose={closeModalReg} isOpen={isOpenReg}>
           <RegisterForm onClose={closeModalReg} />
         </Modal>
       )}

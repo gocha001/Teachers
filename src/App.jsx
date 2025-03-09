@@ -1,12 +1,13 @@
 import { AuthProvider } from "./context/AuthProvider";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import Loader from "./components/Loader/Loader";
 import { lazy, Suspense } from "react";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import ScrollUp from "./components/ScrollUp/ScrollUp.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const TeachersPage = lazy(() =>
@@ -29,9 +30,17 @@ function App() {
       setScr(0);
     }
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.classList.toggle("no-scroll", location.pathname === "/");
+  }, [location.pathname]);
+
   return (
     <Suspense fallback={<Loader />}>
       <AuthProvider>
+        <ToastContainer position="top-center" autoClose={3000} />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />

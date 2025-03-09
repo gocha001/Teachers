@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import css from "./Modal.module.css";
-// import icon from '../../assets/close.xml';
 
-const Modal = ({ children, onClose }) => {
+const Modal = ({ children, onClose, isOpen }) => {
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -20,6 +19,20 @@ const Modal = ({ children, onClose }) => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
 
   return (
     <div onClick={handleBackdropClick} className={css.modal}>

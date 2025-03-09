@@ -1,3 +1,20 @@
+.appCont {
+  width: 1184px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: beige;
+  position: fixed;
+  z-index: 10;
+  opacity: 1;
+  border-radius: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 .appBar {
   display: flex;
   align-items: center;
@@ -6,7 +23,7 @@
   gap: 28px;
   width: 1184px;
   height: 48px;
-  margin-top: 20px;
   margin-left: 128px;
   margin-right: 128px;
+  padding: 10px;
 }

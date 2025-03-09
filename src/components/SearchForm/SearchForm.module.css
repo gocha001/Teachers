@@ -8,6 +8,7 @@
 .search {
   display: flex;
   justify-content: center;
+  margin-top: 108px;
 }
 
 .searchForm {
@@ -36,16 +37,16 @@
 
 .searchLabel {
   font-weight: 500;
-font-size: 14px;
-line-height: 1.28571;
-color: #8a8a89;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: #8a8a89;
 }
 
 .select {
-background: #fff;
-font-weight: 500;
-font-size: 18px;
-line-height: 1.11111;
+  background: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.11111;
 }
 
 .language {
@@ -53,7 +54,7 @@ line-height: 1.11111;
 }
 
 .level {
-  width: 221px
+  width: 221px;
 }
 
 .price {
@@ -91,25 +92,25 @@ line-height: 1.11111;
 }
 
 .selectBox:focus {
-  outline: none; /*Прибирає синю рамку фокусу */
-  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="%23121417"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E'); /* Повторно задаємо іконку */
+  outline: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="%23121417"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
 }
 
 .btnSelect {
   display: flex;
-align-items: center;
-justify-content: center;
-width: 267px;
-height: 60px;
-background:  #f4c550;
-border-radius: 12px;
-font-weight: 700;
-font-size: 18px;
-line-height: 1.55556;
-color: #121417;
-border: none;
+  align-items: center;
+  justify-content: center;
+  width: 267px;
+  height: 60px;
+  background: #f4c550;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55556;
+  color: #121417;
+  border: none;
 }
 
 .btnSelect:hover {
-  background: #ffdc86
+  background: #ffdc86;
 }

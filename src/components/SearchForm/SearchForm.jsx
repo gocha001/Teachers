@@ -23,7 +23,7 @@ const SearchForm = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: { language: "", level: "", price: "1000" },
+    defaultValues: { language: "", level: "", priceMax: "1000" },
   });
 
   const dispatch = useDispatch();
@@ -85,12 +85,12 @@ const SearchForm = () => {
           </div>
 
           <div className={`${css.searchSelect} ${css.price}`}>
-            <label className={css.searchLabel} htmlFor="price">
+            <label className={css.searchLabel} htmlFor="priceMax">
               Price
             </label>
             <select
               {...register("priceMax")}
-              id="price"
+              id="priceMax"
               className={css.selectBox}
             >
               <option value="1000">Price</option>

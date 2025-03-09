@@ -1,8 +1,11 @@
 #root {
   max-width: 1560px;
-  min-height: 790px;
+  height: 750px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
+.no-scroll {
+  overflow: hidden;
+}

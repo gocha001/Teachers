@@ -9,11 +9,13 @@ const AppBar = () => {
   const user = useSelector(selectUser);
 
   return (
-    <div className={css.appBar}>
-      <Navigation />
+    <div className={css.appCont}>
+      <div className={css.appBar}>
+        <Navigation />
 
-      {user && <UserMenu />}
-      {!user && <AuthNav />}
+        {user && <UserMenu />}
+        {!user && <AuthNav />}
+      </div>
     </div>
   );
 };

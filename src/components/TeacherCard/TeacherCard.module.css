@@ -1,374 +1,362 @@
 .card {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: row;
-gap: 48px;
-border-radius: 24px;
-padding: 24px;
-width: 1184px;
-/* height: 328px; */
-background: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 48px;
+  border-radius: 24px;
+  padding: 24px;
+  width: 1184px;
+  background: #fff;
 }
 
 .avatar {
-    border: 3px solid #fbe9ba;
-border-radius: 100px;
-width: 120px;
-height: 120px;
-background: #fff;
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
+  border: 3px solid #fbe9ba;
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .avatarImage {
-    border-radius: 100px;
-width: 96px;
-height: 96px;
+  border-radius: 100px;
+  width: 96px;
+  height: 96px;
 }
 
 .avatarSvg {
-    position: absolute;
-    top: 13px;
-    right: 21px;
+  position: absolute;
+  top: 13px;
+  right: 21px;
 }
 
 .cardContainer {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-gap: 32px;
-width: 968px;
-/* height: 280px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+  width: 968px;
 }
 
 .cardContent {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-gap: 16px;
-width: 968px;
-/* height: 216px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  width: 968px;
 }
 
 .cardInfo {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-gap: 32px;
-width: 968px;
-/* height: 176px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+  width: 968px;
 }
 
 .cardHeader {
-    display: flex;
-align-items: flex-start;
-justify-content: space-between;
-flex-direction: row;
-width: 968px;
-height: 56px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 968px;
+  height: 56px;
 }
 
 .cardNameCont {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-gap: 8px;
-/* width: 122px; */
-height: 56px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  height: 56px;
 }
 
 .cardNameTitle {
-    font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-color: #8a8a89;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8a8a89;
 }
 
 .cardName {
-    font-weight: 500;
-font-size: 24px;
-line-height: 1;
-color: #121417;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+  color: #121417;
 }
 
 .cardItemsLove {
-    display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-gap: 64px;
-width: 697px;
-height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 64px;
+  width: 697px;
+  height: 26px;
 }
 
 .cardItems {
-    display: flex;
-align-items: center;
-justify-content: flex-start;
-flex-direction: row;
-gap: 16px;
-width: 607px;
-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  width: 607px;
+  height: 24px;
 }
 
 .cardOnline {
-    display: flex;
-align-items: center;
-justify-content: flex-start;
-flex-direction: row;
-gap: 8px;
-width: 132px;
-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 132px;
+  height: 24px;
 }
 
 .bookOpen {
-    stroke: #121417;
-    fill: none;
+  stroke: #121417;
+  fill: none;
 }
 
 .online {
-    font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-color: #121417;
-white-space: nowrap;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+  white-space: nowrap;
 }
 
 .vector {
-    stroke: #121417;
-    fill: none;
-    width: 4px;
-    height: 16px;
+  stroke: #121417;
+  fill: none;
+  width: 4px;
+  height: 16px;
 }
 
 .done {
-    display: flex;
-align-items: center;
-justify-content: flex-start;
-flex-direction: row;
-gap: 8px;
-width: 145px;
-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 145px;
+  height: 24px;
 }
 
 .rating {
-    display: flex;
-align-items: center;
-justify-content: flex-start;
-flex-direction: row;
-gap: 8px;
-width: 101px;
-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 101px;
+  height: 24px;
 }
 
 .price {
-    width: 133px;
-    height: 24px;
+  width: 133px;
+  height: 24px;
 }
 
 .span {
-    color: #38cd3e;
+  color: #38cd3e;
 }
 
 .cardLove {
-    width: 26px;
-    height: 26px;
+  width: 26px;
+  height: 26px;
 }
 
 .btnLove {
-    border: none;
-    background: none;
+  border: none;
+  background: none;
 }
 
 .loveNormal {
-    stroke: #121417;
-    fill: none;
+  stroke: #121417;
+  fill: none;
 }
 
 .cardBlock {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-gap: 8px;
-/* width: 808px; */
-height: 88px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  height: 88px;
 }
 
 .blockTitle {
-    font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-color: #8a8a89;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8a8a89;
 }
 
 .blockItem {
-    color: #121417;
+  color: #121417;
 }
 
 .decor {
-    text-decoration: underline;
-text-decoration-skip-ink: none;
-color: #121417;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #121417;
 }
 
 .btnMore {
-    font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-text-decoration: underline;
-text-decoration-skip-ink: none;
-color: #121417;
-border: none;
-background: none;
-padding: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #121417;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 .levels {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: row;
-gap: 8px;
-/* width: 566px; */
-height: 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  height: 32px;
 }
 
 .level {
-    display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-gap: 4px;
-border: 1px solid rgba(18, 20, 23, 0.2);
-border-radius: 35px;
-padding: 8px 12px;
-/* width: 124px; */
-height: 32px;
-font-weight: 500;
-font-size: 14px;
-line-height: 1.14286;
-color: #121417;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 4px;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+  padding: 8px 12px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14286;
+  color: #121417;
 }
 
 .text {
-    font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-color: #121417;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
 }
 
 .btnTrial {
-    display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-border-radius: 12px;
-padding: 16px 48px;
-width: 232px;
-height: 60px;
-background: #f4c550;
-font-weight: 700;
-font-size: 18px;
-line-height: 1.55556;
-color: #121417;
-border: none;
-white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 12px;
+  padding: 16px 48px;
+  width: 232px;
+  height: 60px;
+  background: #f4c550;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55556;
+  color: #121417;
+  border: none;
+  white-space: nowrap;
 }
 
 .btnTrial:hover {
-    background: #ffdc86;
+  background: #ffdc86;
 }
 
 .reviews {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-gap: 32px;
-/* width: 417px; */
-/* height: 200px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .review {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-gap: 16px;
-/* width: 400px; */
-/* height: 84px; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .user {
-    display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: row;
-gap: 12px;
-width: 100px;
-height: 44px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 12px;
+  width: 100px;
+  height: 44px;
 }
 
 .userImage {
-    border-radius: 100px;
-width: 44px;
-height: 44px;
-background: #f8f8f8;
-border: 2px solid #fbe9ba;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 600;
-font-size: 24px;
-line-height: 1.33333;
-color: #e44848;
+  border-radius: 100px;
+  width: 44px;
+  height: 44px;
+  background: #f8f8f8;
+  border: 2px solid #fbe9ba;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #e44848;
 }
 
 .userNameBlock {
-    display: flex;
-align-items: flex-start;
-justify-content: center;
-flex-direction: column;
-gap: 2px;
-width: 44px;
-height: 44px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  width: 44px;
+  height: 44px;
 }
 
 .userName {
-    font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-color: #8a8a89;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8a8a89;
 }
 
 .userRating {
-    display: flex;
-align-items: center;
-justify-content: flex-start;
-flex-direction: row;
-gap: 8px;
-width: 44px;
-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 44px;
+  height: 18px;
 }
 
 .userRatingText {
-    font-weight: 500;
-font-size: 14px;
-line-height: 1.28571;
-color: #121417;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: #121417;
 }
 
 .reviewText {
-    font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-color: #121417;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
 }

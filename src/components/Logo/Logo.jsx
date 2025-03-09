@@ -1,4 +1,4 @@
-import css from './Logo.module.css';
+import css from "./Logo.module.css";
 
 const Logo = () => {
   return (
@@ -6,11 +6,9 @@ const Logo = () => {
       <svg width="28" height="28">
         <use href="/logo.xml#icon-ukraine" />
       </svg>
-      <h2 className={css.logoText}>
-        LearnLingo
-      </h2>
+      <h2 className={css.logoText}>LearnLingo</h2>
     </div>
   );
-}
+};
 
-export default Logo
+export default Logo;

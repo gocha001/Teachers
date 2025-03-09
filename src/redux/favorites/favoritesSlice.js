@@ -1,29 +1,89 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import {
+  fetchFavorites,
+  addFavorite,
+  deleteFavorite,
+} from "./favoritesOperations";
+import { logoutUser } from "../user/userOperations";
 
 const initialState = {
-    favorites:[],
-} 
+  favorites: [],
+  isLoading: false,
+  error: null,
+  page: 1,
+  lastVisible: null,
+  pageSize: 4,
+  lastPage: false,
+  lastKey: null,
+};
 
 const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
-    addFavorite: (state, action) => {
-      const item = action.payload;
-      const exists = state.favorites.some((fav) => fav.id === item.id);
-      if (!exists) {
-        state.favorites.push(item);
-      }
-      console.log(state.favorites);
+    resetFavorites: (state) => {
+      state.favorites = [];
+      state.page = 1;
+      state.lastVisible = null;
+      state.lastPage = false;
+      state.lastKey = null;
     },
-    removeFavorite: (state, action) => {
-      state.favorites = state.favorites.filter(
-        (fav) => fav.id !== action.payload
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchFavorites.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.favorites = Array.isArray(action.payload.favorites)
+          ? [...state.favorites, ...action.payload.favorites]
+          : [];
+        state.lastKey = action.payload.lastKey;
+        state.lastPage = action.payload.isLastPage;
+        state.page += 1;
+        state.lastVisible = action.payload.lastVisible;
+      })
+      .addCase(addFavorite.fulfilled, (state, action) => {
+        state.favorites.push(action.payload);
+      })
+      .addCase(deleteFavorite.fulfilled, (state, action) => {
+        state.favorites = state.favorites.filter(
+          (item) => item.id !== action.payload
+        );
+      })
+      .addCase(logoutUser.fulfilled, () => initialState)
+      .addMatcher(
+        isAnyOf(
+          fetchFavorites.pending,
+          addFavorite.pending,
+          deleteFavorite.pending
+        ),
+        (state) => {
+          state.isLoading = true;
+          state.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          fetchFavorites.fulfilled,
+          addFavorite.fulfilled,
+          deleteFavorite.fulfilled
+        ),
+        (state) => {
+          state.isLoading = false;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          fetchFavorites.rejected,
+          addFavorite.rejected,
+          deleteFavorite.rejected
+        ),
+        (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        }
       );
-      console.log(state.favorites);
-    },
   },
 });
 
 export const favoritesReducer = favoritesSlice.reducer;
-export const { addFavorite, removeFavorite } = favoritesSlice.actions;
+export const { resetFavorites } = favoritesSlice.actions;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTeachers } from "../../redux/teachers/teachersOperations.js";
 import {
@@ -21,7 +21,7 @@ const TeachersList = () => {
   const error = useSelector(selectTeachersError);
   const page = useSelector(selectTeachersPage);
   const lastPage = useSelector(selectTeachersLastPage);
-  const [scrTo, setSrcTo] = useState(1250);
+  const prevScrollY = useRef(0);
 
   useEffect(() => {
     dispatch(resetTeachers());
@@ -29,19 +29,16 @@ const TeachersList = () => {
   }, [dispatch]);
 
   const loadMore = () => {
+    prevScrollY.current = window.scrollY + 620;
     dispatch(fetchTeachers({ page }));
-    scrollWindow();
-    setSrcTo((prev) => prev + 1440);
   };
 
-  const scrollWindow = () => {
-    setTimeout(() => {
-      window.scrollBy({
-        top: scrTo,
-        behavior: "smooth",
-      });
-    }, 500);
-  };
+  useEffect(() => {
+    window.scrollTo({
+      top: prevScrollY.current,
+      behavior: "instant",
+    });
+  }, [teachers]);
 
   if (isLoading)
     return (
@@ -56,8 +53,8 @@ const TeachersList = () => {
     <div className={css.teachersList}>
       <ul className={css.cards}>
         {Array.isArray(teachers) &&
-          teachers.map((teacher, index) => (
-            <li key={index}>
+          teachers.map((teacher) => (
+            <li key={teacher.id}>
               <TeacherCard teacher={teacher} />
             </li>
           ))}
@@ -65,7 +62,7 @@ const TeachersList = () => {
 
       {!lastPage && !isLoading && (
         <button onClick={loadMore} className={css.btnLoadMore}>
-          Завантажити ще
+          Load More
         </button>
       )}
     </div>

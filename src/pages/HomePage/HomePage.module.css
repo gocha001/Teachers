@@ -6,7 +6,9 @@
   width: 1312px;
   height: 670px;
   margin-left: 64px;
-  margin-top: 20px;
+  margin-top: 80px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .home {

@@ -1,6 +1,6 @@
-import LogOut from '../LogOut/LogOut';
-import css from './UserMenu.module.css';
-import { NavLink } from 'react-router-dom';
+import LogOut from "../LogOut/LogOut";
+import css from "./UserMenu.module.css";
+import { NavLink } from "react-router-dom";
 
 const UserMenu = () => {
   return (
@@ -14,6 +14,6 @@ const UserMenu = () => {
       <LogOut />
     </div>
   );
-}
+};
 
-export default UserMenu
+export default UserMenu;
