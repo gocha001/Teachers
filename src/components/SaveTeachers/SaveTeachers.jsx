@@ -1,5 +1,5 @@
 import { saveTeachers } from "../../redux/teachers/teachersOperations.js";
-import data from "../../data/data.json";
+import data from "../../../data.json";
 import { useDispatch } from "react-redux";
 
 const SaveButton = () => {
