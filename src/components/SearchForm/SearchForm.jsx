@@ -19,24 +19,31 @@ const SearchForm = () => {
 
   const {
     register,
-    handleSubmit,
+    getValues,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: { language: "", level: "", priceMax: "1000" },
+    defaultValues: { language: "French", level: "A1 Beginner", priceMax: "25" },
   });
 
   const dispatch = useDispatch();
 
-  const onSubmit = (data) => {
-    dispatch(resetTeachers());
-    dispatch(filterTeachers(data));
-    dispatch(fetchTeachers());
+  const handleFilterChange = (field, value) => {
+    const currentFilters = getValues();
+    setValue(field, value);
+    const updatedFilters = { ...currentFilters, [field]: value };
+
+    setTimeout(() => {
+      dispatch(resetTeachers());
+      dispatch(filterTeachers(updatedFilters));
+      dispatch(fetchTeachers());
+    }, 0);
   };
 
   return (
     <div className={css.search}>
-      <form onSubmit={handleSubmit(onSubmit)} className={css.searchForm}>
+      <form className={css.searchForm}>
         <div className={css.searchSelects}>
           <div className={`${css.searchSelect} ${css.language}`}>
             <label className={css.searchLabel} htmlFor="language">
@@ -46,8 +53,9 @@ const SearchForm = () => {
               {...register("language")}
               id="language"
               className={css.selectBox}
+              onChange={(e) => handleFilterChange("language", e.target.value)}
+              onClick={(e) => handleFilterChange("language", e.target.value)}
             >
-              <option value="">Select language</option>
               <option value="French">French</option>
               <option value="English">English</option>
               <option value="German">German</option>
@@ -67,8 +75,13 @@ const SearchForm = () => {
             <label className={css.searchLabel} htmlFor="level">
               Level of knowledge
             </label>
-            <select {...register("level")} id="level" className={css.selectBox}>
-              <option value="">Select level</option>
+            <select
+              {...register("level")}
+              id="level"
+              className={css.selectBox}
+              onChange={(e) => handleFilterChange("level", e.target.value)}
+              onClick={(e) => handleFilterChange("level", e.target.value)}
+            >
               <option value="A1 Beginner">A1 Beginner</option>
               <option value="A2 Elementary">A2 Elementary</option>
               <option value="B1 Intermediate">B1 Intermediate</option>
@@ -92,8 +105,9 @@ const SearchForm = () => {
               {...register("priceMax")}
               id="priceMax"
               className={css.selectBox}
+              onChange={(e) => handleFilterChange("priceMax", e.target.value)}
+              onClick={(e) => handleFilterChange("priceMax", e.target.value)}
             >
-              <option value="1000">Price</option>
               <option value="25">25 $</option>
               <option value="30">30 $</option>
               <option value="35">35 $</option>
@@ -105,10 +119,6 @@ const SearchForm = () => {
             )}
           </div>
         </div>
-
-        <button type="submit" className={css.btnSelect}>
-          Select
-        </button>
         {error && <p className={css.error}>{error}</p>}
       </form>
     </div>

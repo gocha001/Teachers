@@ -17,6 +17,9 @@ const filterSlice = createSlice({
       state.language = action.payload.language;
       state.level = action.payload.level;
       state.priceMax = action.payload.priceMax;
+      console.log(action.payload.language);
+      console.log(action.payload.level);
+      console.log(action.payload.priceMax);
       console.log(state.language, state.level, state.priceMax);
     },
   },

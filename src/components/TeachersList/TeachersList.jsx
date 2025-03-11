@@ -12,6 +12,9 @@ import { resetTeachers } from "../../redux/teachers/teachersSlice.js";
 import TeacherCard from "../TeacherCard/TeacherCard.jsx";
 import css from "./TeachersList.module.css";
 import Loader from "../../components/Loader/Loader.jsx";
+import { selectUser } from "../../redux/user/selectors.js";
+import { resetFavorites } from "../../redux/favorites/favoritesSlice.js";
+import { fetchFavorites } from "../../redux/favorites/favoritesOperations.js";
 
 const TeachersList = () => {
   const dispatch = useDispatch();
@@ -22,11 +25,14 @@ const TeachersList = () => {
   const page = useSelector(selectTeachersPage);
   const lastPage = useSelector(selectTeachersLastPage);
   const prevScrollY = useRef(0);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
+    dispatch(resetFavorites());
+    dispatch(fetchFavorites());
     dispatch(resetTeachers());
     dispatch(fetchTeachers());
-  }, [dispatch]);
+  }, [dispatch, user]);
 
   const loadMore = () => {
     prevScrollY.current = window.scrollY + 620;

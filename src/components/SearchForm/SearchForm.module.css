@@ -7,8 +7,11 @@
 
 .search {
   display: flex;
-  justify-content: center;
-  margin-top: 108px;
+  justify-content: flex-start;
+  margin-top: 96px;
+  margin-bottom: 32px;
+  min-width: 1440px;
+  padding-left: 128px;
 }
 
 .searchForm {
@@ -68,7 +71,7 @@
   padding-left: 14px;
   padding-right: 40px;
   height: 48px;
-  background: #f3f3f3; /* Змінений фон */
+  background: #fff;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.1;
@@ -94,23 +97,4 @@
 .selectBox:focus {
   outline: none;
   background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="%23121417"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
-}
-
-.btnSelect {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 267px;
-  height: 60px;
-  background: #f4c550;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.55556;
-  color: #121417;
-  border: none;
-}
-
-.btnSelect:hover {
-  background: #ffdc86;
 }

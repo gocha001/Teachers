@@ -7,5 +7,7 @@
 }
 
 .no-scroll {
-  overflow: hidden;
+  background-color: #fff;
+  width: 100%;
+  padding-left: 60px;
 }

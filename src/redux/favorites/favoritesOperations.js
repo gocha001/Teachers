@@ -14,12 +14,24 @@ import { db, auth } from "../../config/firebase.js";
 
 export const addFavorite = createAsyncThunk(
   "favorites/addFavorite",
-  async (data, { rejectWithValue }) => {
+  async (data, { rejectWithValue, getState }) => {
     try {
-      const userId = auth.currentUser?.uid;
+      const state = getState();
+      const userId = state.auth?.user?.uid || auth.currentUser?.uid;
       if (!userId) return rejectWithValue("User not authenticated");
 
       const userFavoritesRef = ref(db, `favorites/${userId}`);
+      const snapshot = await get(userFavoritesRef);
+
+      if (snapshot.exists()) {
+        const favorites = snapshot.val();
+        const isDuplicate = Object.values(favorites).some(
+          (fav) => fav.id === data.id
+        );
+        if (isDuplicate) {
+          return rejectWithValue("This item is already in favorites");
+        }
+      }
       const newFavoriteRef = push(userFavoritesRef);
       await set(newFavoriteRef, data);
 
@@ -73,7 +85,7 @@ export const fetchFavorites = createAsyncThunk(
     const { lastVisible, pageSize } = state.favorites;
 
     try {
-      const userId = auth.currentUser?.uid;
+      const userId = state.auth?.user?.uid || auth.currentUser?.uid;
       if (!userId) return rejectWithValue("User not authenticated");
 
       const userFavoritesRef = ref(db, `favorites/${userId}`);
